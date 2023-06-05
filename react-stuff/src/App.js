@@ -1,10 +1,24 @@
 import "./App.css";
 import { getImageUrl } from "./utils";
 
-// Passing Props to a Component
+function Clouds() {
+  return (
+    <>
+      <div className="">
+        <div className="clouds cloud1"></div>
+        <div className="clouds cloud2"></div>
+        <div className="clouds cloud3"></div>
+      </div>
+    </>
+  );
+}
+
+// PASSING PROPS TO A COMPONENT
 
 // Child Component
-function Avatar({ person, size }) {
+function Avatar(props) {
+  let person = props.person;
+  let size = props.size;
   return (
     <img
       // Props, JSX curlies
@@ -16,6 +30,7 @@ function Avatar({ person, size }) {
     />
   );
 }
+
 // Main component (Parent)
 export default function Profile() {
   return (
@@ -27,6 +42,7 @@ export default function Profile() {
       />
       <Avatar size={80} person={{ name: "Aklilu Lemma", imageId: "OKS67lh" }} />
       <Avatar size={50} person={{ name: "Lin Lanying", imageId: "1bX5QH6" }} />
+      <Clouds />
     </div>
   );
 }
