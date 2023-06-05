@@ -2,6 +2,16 @@ body {
   background-color: skyblue;
 }
 
+.card {
+  float: left;
+  width: 120px;
+  height: 120px;
+  border: 1px solid black;
+  border-radius: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .avatar {
   border-radius: 50%;
 }
@@ -14,14 +24,13 @@ body {
   position: absolute;
 }
 .cloud1 {
-  top: 150px;
+  top: 180px;
 }
 .cloud2 {
-  position: absolute;
+  top: 140px;
   right: 380px;
 }
 .cloud3 {
-  position: absolute;
-  top: 170px;
+  top: 200px;
   right: 330px;
 }
