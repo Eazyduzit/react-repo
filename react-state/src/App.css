@@ -1,1 +1,7 @@
+body{
+  background: linear-gradient(135deg, red, blue) no-repeat;
+}
 
+.spacing{
+  height: 30px;
+}
