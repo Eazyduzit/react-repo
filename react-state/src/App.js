@@ -1,11 +1,12 @@
 import "./App.css";
-import {sculptureList} from "./data";
+import { useState } from "react";
+import { sculptureList } from "./data";
 
 export default function Gallery(){
-  let index = 0;
-
+  const [index, setIndex] = useState(0);
+  
   function handleClick(){
-    index = index + 1;
+    setIndex(index + 1);
   }
 
   let sculpture = sculptureList[index];
