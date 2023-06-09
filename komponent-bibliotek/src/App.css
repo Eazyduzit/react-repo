@@ -1,0 +1,15 @@
+/* MUST HAVE CORE DEPENDECIES INSTALLED */
+@import url("@sikt/sds-core");
+
+@import url("@sikt/sds-header");
+@import url("@sikt/sds-footer");
+
+@import url("@sikt/sds-section");
+
+@import url("@sikt/sds-badge");
+@import url("@sikt/sds-button");
+
+h1{
+  display: flex;
+  justify-content: center;
+}
