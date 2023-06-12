@@ -30,7 +30,7 @@ function App() {
 
       <Badge>Hello, World!</Badge>
 
-      <Footer>Some footer content</Footer>
+      <Footer>Some footer content...</Footer>
     </div>
   );
 }
