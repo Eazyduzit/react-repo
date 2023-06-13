@@ -1,8 +1,13 @@
+const baseUrl = "https://i.imgur.com/"
 const person = {
     name: "Gregorio Y. Zara",
+    imageId: "7vQD0fP",
+    imageSize: "s",
+    // imageFile: ".jpg",
     theme: {
         backgroundColor: "skyblue",
-        color: "white"
+        color: "white",
+        border: "1px solid black"
     }
 }
 
@@ -12,8 +17,8 @@ export default function Person(){
             <h1>{person.name}'s Todos..</h1>
             <img 
               className="avatar"
-              src="https://i.imgur.com/7vQD0fPs.jpg"
-              alt="Gregorio"
+              src={baseUrl + person.imageId + person.imageSize + ".jpg"}
+              alt={person.name}
             />
             <ol>
                 <li>Improve the videophone</li>
