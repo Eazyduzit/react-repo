@@ -1,20 +1,15 @@
 import "./App.css";
 import Bio from "./Bio.js";
+import TodoList from "./TodoList";
+import Avatar from "./Avatar.js";
 
-export default function TodoList() {
+function App() {
   return (
     <>
       <Bio />
-      <h1>Lamarr's Todos</h1>
-      <img style={{ border: "2px dotted red" }}
-        src="https://i.imgur.com/yXOvdOSs.jpg" 
-        alt="Lamarr" 
-        className="photo" />
-      <ul>
-        <li>Invent</li>
-        <li>Rehearse</li>
-        <li>Improve</li>
-      </ul>
+      <TodoList />
+      <Avatar />
     </>
   );
 }
+export default App
