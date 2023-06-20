@@ -25,3 +25,27 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.test-class {
+  color: black;
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+button,
+p {
+  width: 500px;
+  border-radius: 10px;
+  font-size: 2rem;
+}
+button {
+  height: 200px;
+  background-color: lightsalmon;
+}
+p {
+  height: 100px;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
