@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function Counter() {
   let [count, setCount] = useState(0);
-  if(count === 101){
+  if(count === 11){
     setCount(count = 0);
   }
   return (
