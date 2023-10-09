@@ -1,10 +1,10 @@
 import './App.css'
+import MyComponent from './MyComponent'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola, Mundo!</h1>
-      <p>Typescript 4 the win</p>
+      <MyComponent />
     </div>
   )
 }
