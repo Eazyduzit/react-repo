@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,12 +39,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function greet(person, date) {
     console.log("Hello ".concat(person, ", today is ").concat(date.toDateString(), "."));
 }
-greet('Marius', new Date());
+greet("Marius", new Date());
 // parameter type annotation
 function greet1(name) {
-    console.log('Hello, ' + name.toUpperCase() + '!!');
+    console.log("Hello, " + name.toUpperCase() + "!!");
 }
-greet1('Marius');
+greet1("Marius");
 // return type annotations
 function getFavouriteNumber() {
     return 26;
@@ -59,3 +59,20 @@ function getFavouriteNumber1() {
     });
 }
 getFavouriteNumber1();
+// anonymous functions
+// contextual typing for function
+var names = ["Alice", "Bob", "Eve"];
+names.forEach(function (s) {
+    console.log(s.toUpperCase());
+});
+// contextual typing also applies to arrow functions
+names.forEach(function (s) {
+    console.log(s.toUpperCase());
+});
+// object types
+// the parameters type annotation is an object type
+function printCoord(pt) {
+    console.log("The Coordinate's x value is " + pt.x);
+    console.log("The Coordinate's y value is " + pt.y);
+}
+printCoord({ x: 3, y: 7 });
