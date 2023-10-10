@@ -42,4 +42,15 @@ function printCoord(pt: { x: number; y: number }) {
 }
 printCoord({ x: 3, y: 7 })
 
+// optional properties
+function printName(obj: { first: string; last?: string }) {
+  if (obj.last == undefined) {
+    console.log(`${obj.first}`)
+  } else {
+    console.log(`${obj.first} ${obj.last}`)
+  }
+}
+printName({ first: "John" })
+printName({ first: "John", last: "Cena" })
+
 export {}

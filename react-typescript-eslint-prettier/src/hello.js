@@ -76,3 +76,14 @@ function printCoord(pt) {
     console.log("The Coordinate's y value is " + pt.y);
 }
 printCoord({ x: 3, y: 7 });
+// optional properties
+function printName(obj) {
+    if (obj.last == undefined) {
+        console.log("".concat(obj.first));
+    }
+    else {
+        console.log("".concat(obj.first, " ").concat(obj.last));
+    }
+}
+printName({ first: "John" });
+printName({ first: "John", last: "Cena" });
