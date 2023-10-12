@@ -119,3 +119,9 @@ function getFirstThree(x) {
 }
 getFirstThree([2, 4, 6, 8]);
 getFirstThree("Johnny");
+// same example as before
+function printCoord1(pt) {
+    console.log("The Coordinate's x value is " + pt.x);
+    console.log("The Coordinate's y value is " + pt.y);
+}
+printCoord1({ x: 100, y: 100 });

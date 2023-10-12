@@ -86,4 +86,30 @@ function getFirstThree(x: number[] | string) {
 getFirstThree([2, 4, 6, 8])
 getFirstThree("Johnny")
 
+// type aliases
+type Point = {
+  x: number
+  y: number
+}
+// same example as before
+function printCoord1(pt: Point) {
+  console.log("The Coordinate's x value is " + pt.x)
+  console.log("The Coordinate's y value is " + pt.y)
+}
+printCoord1({ x: 100, y: 100 })
+
+// type aliases can name union types
+// type ID = number | string
+
+// type UserInputSanitizedString = string
+
+// function sanitizeInput(str: string): UserInputSanitizedString {
+//   return sanitize(str)
+// }
+// creat a sanitized input
+// let userInput = sanitizeInput(getInput())
+
+// can still be re-assigned with a string though
+// userInput = "new input"
+
 export {}
