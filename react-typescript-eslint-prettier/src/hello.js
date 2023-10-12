@@ -173,3 +173,9 @@ function doSomething(x) {
     }
 }
 doSomething("World");
+// non-null assertion operator (postfix !)
+function liveDangerously(x) {
+    // no error
+    console.log(x.toFixed());
+}
+liveDangerously(44);

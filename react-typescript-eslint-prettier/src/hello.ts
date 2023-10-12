@@ -153,4 +153,11 @@ function doSomething(x: string | null) {
   }
 }
 doSomething("World")
+
+// non-null assertion operator (postfix !)
+function liveDangerously(x?: number | null) {
+  // no error
+  console.log(x!.toFixed())
+}
+liveDangerously(44)
 export {}
