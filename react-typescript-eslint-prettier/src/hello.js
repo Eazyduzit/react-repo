@@ -125,3 +125,51 @@ function printCoord1(pt) {
     console.log("The Coordinate's y value is " + pt.y);
 }
 printCoord1({ x: 100, y: 100 });
+// type aliases can name union types
+// type ID = number | string
+// type UserInputSanitizedString = string
+// function sanitizeInput(str: string): UserInputSanitizedString {
+//   return sanitize(str)
+// }
+// creat a sanitized input
+// let userInput = sanitizeInput(getInput())
+// can still be re-assigned with a string though
+// userInput = "new input"
+// interface vs type
+// they are very similar and can be chosen between almost freely.
+// key difference is that interface can be expanded upon while type is not
+// interface Animal {
+//   name: string
+// }
+// interface Bear extends Animal {
+//   honey: boolean
+// }
+// const bear = getBear()
+// bear.name
+// bear.honey
+// type Animal1 = {
+//   name: string
+// }
+// type Bear1 = Animal1 & {
+//   honey: boolean
+// }
+// const bear1 = getBear1()
+// bear.name
+// bear.honey
+// type assertions
+// const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement
+// const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas")
+// literal types
+// let changingString = "Hello World"
+// changingString = "Hola Mundo"
+// changingString
+// strict null checks on
+function doSomething(x) {
+    if (x === null) {
+        // do nothing
+    }
+    else {
+        console.log("Hello, " + x.toUpperCase());
+    }
+}
+doSomething("World");

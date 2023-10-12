@@ -135,4 +135,22 @@ printCoord1({ x: 100, y: 100 })
 // bear.name
 // bear.honey
 
+// type assertions
+// const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement
+// const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas")
+
+// literal types
+// let changingString = "Hello World"
+// changingString = "Hola Mundo"
+// changingString
+
+// strict null checks on
+function doSomething(x: string | null) {
+  if (x === null) {
+    // do nothing
+  } else {
+    console.log("Hello, " + x.toUpperCase())
+  }
+}
+doSomething("World")
 export {}
