@@ -87,3 +87,35 @@ function printName(obj) {
 }
 printName({ first: "John" });
 printName({ first: "John", last: "Cena" });
+// union types
+function printID(id) {
+    if (id === "string") {
+        // in this branch, id is of type string
+        console.log(id.toUpperCase());
+    }
+    else {
+        // here, id is of type number
+        console.log(id);
+    }
+}
+printID(101);
+printID("202");
+printID({ myID: 22342 });
+function welcomePeople(x) {
+    if (Array.isArray(x)) {
+        // here, x is string[]
+        console.log("Hello, " + x.join(" and "));
+    }
+    else {
+        // here, x is string
+        console.log("Welcome lone traveler " + x);
+    }
+}
+welcomePeople(["Johhny", "Jenny"]);
+welcomePeople("Johhny");
+// return type is inferred as number[] | string
+function getFirstThree(x) {
+    return x.slice(0, 3);
+}
+getFirstThree([2, 4, 6, 8]);
+getFirstThree("Johnny");
