@@ -172,8 +172,8 @@ function padLeft(padding: number | string, input: string): string {
 padLeft(10, "Hello")
 
 // more type guards
-function printAll(strs: string | string[] /* | null */) {
-  if (typeof strs === "object") {
+function printAll(strs: string | string[] | null) {
+  if (strs && typeof strs === "object") {
     for (const s of strs) {
       console.log(s)
     }
@@ -195,7 +195,17 @@ function getUsersOnlineMessage(numUsersOnline: number) {
 getUsersOnlineMessage(3)
 
 // both of these result in true value
-Boolean("Hello, m8") // type boolean, value true
-!!"and World" // type true, value true
+// Boolean("Hello, m8") // type boolean, value true
+// !!"and World" // type true, value true
+
+// boolean negations with ! filter out from negated branches
+function multiplyAll(values: number[] | undefined, factor: number): number[] | undefined {
+  if (!values) {
+    return values
+  } else {
+    return values.map((x) => x * factor)
+  }
+}
+multiplyAll([3], 5)
 
 export {}
