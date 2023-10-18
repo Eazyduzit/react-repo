@@ -225,3 +225,25 @@ function multiplyAll(values, factor) {
     }
 }
 multiplyAll([3], 5);
+// equality narrowing
+function example(x, y) {
+    if (x === y) {
+        // we can now call any "string" method on "x" or "y"
+        x.toUpperCase();
+        y.toLowerCase();
+    }
+    else {
+        console.log(x);
+        console.log(y);
+    }
+}
+example(3, "Hellaw");
+function multiplyValue(container, factor) {
+    // remove both null and undefined from the type
+    if (container.value != null) {
+        console.log(container.value * factor);
+        // now we can safely multiply container.value
+        container.value *= factor;
+    }
+}
+multiplyValue({ value: 9 }, 3);

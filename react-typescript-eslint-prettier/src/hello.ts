@@ -208,4 +208,31 @@ function multiplyAll(values: number[] | undefined, factor: number): number[] | u
 }
 multiplyAll([3], 5)
 
+// equality narrowing
+function example(x: string | number, y: string | boolean) {
+  if (x === y) {
+    // we can now call any "string" method on "x" or "y"
+    x.toUpperCase()
+    y.toLowerCase()
+  } else {
+    console.log(x)
+    console.log(y)
+  }
+}
+example(3, "Hellaw")
+
+// example with interface
+interface Container {
+  value: number | null | undefined
+}
+function multiplyValue(container: Container, factor: number) {
+  // remove both null and undefined from the type
+  if (container.value != null) {
+    console.log(container.value * factor)
+    // now we can safely multiply container.value
+    container.value *= factor
+  }
+}
+multiplyValue({ value: 9 }, 3)
+
 export {}
