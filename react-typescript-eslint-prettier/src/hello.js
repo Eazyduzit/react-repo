@@ -176,6 +176,42 @@ doSomething("World");
 // non-null assertion operator (postfix !)
 function liveDangerously(x) {
     // no error
-    console.log(x.toFixed());
+    console.log(x === null || x === void 0 ? void 0 : x.toFixed());
 }
 liveDangerously(44);
+// narrowing
+function padLeft(padding, input) {
+    //   throw new Error("Not implemented yet!")
+    if (typeof padding === "number") {
+        return " ".repeat(padding) + input;
+    }
+    return padding + input;
+}
+padLeft(10, "Hello");
+// more type guards
+function printAll(strs /* | null */) {
+    if (typeof strs === "object") {
+        for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
+            var s = strs_1[_i];
+            console.log(s);
+        }
+    }
+    else if (typeof strs === "string") {
+        console.log(strs);
+    }
+    else {
+        // do nothing
+    }
+}
+printAll("Hello, Fellow");
+// thruthiness narrowing
+function getUsersOnlineMessage(numUsersOnline) {
+    if (numUsersOnline) {
+        return "There are ".concat(numUsersOnline, " online now!");
+    }
+    return "Nobody's herre. :(";
+}
+getUsersOnlineMessage(3);
+// both of these result in true value
+Boolean("Hello, m8"); // type boolean, value true
+!!"and World"; // type true, value true

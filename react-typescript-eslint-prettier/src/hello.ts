@@ -157,7 +157,45 @@ doSomething("World")
 // non-null assertion operator (postfix !)
 function liveDangerously(x?: number | null) {
   // no error
-  console.log(x!.toFixed())
+  console.log(x?.toFixed())
 }
 liveDangerously(44)
+
+// narrowing
+function padLeft(padding: number | string, input: string): string {
+  //   throw new Error("Not implemented yet!")
+  if (typeof padding === "number") {
+    return " ".repeat(padding) + input
+  }
+  return padding + input
+}
+padLeft(10, "Hello")
+
+// more type guards
+function printAll(strs: string | string[] /* | null */) {
+  if (typeof strs === "object") {
+    for (const s of strs) {
+      console.log(s)
+    }
+  } else if (typeof strs === "string") {
+    console.log(strs)
+  } else {
+    // do nothing
+  }
+}
+printAll("Hello, Fellow")
+
+// thruthiness narrowing
+function getUsersOnlineMessage(numUsersOnline: number) {
+  if (numUsersOnline) {
+    return `There are ${numUsersOnline} online now!`
+  }
+  return "Nobody's herre. :("
+}
+getUsersOnlineMessage(3)
+
+// both of these result in true value
+Boolean("Hello, m8") // type boolean, value true
+!!"and World" // type true, value true
+
 export {}
