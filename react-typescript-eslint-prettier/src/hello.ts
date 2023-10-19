@@ -235,4 +235,34 @@ function multiplyValue(container: Container, factor: number) {
 }
 multiplyValue({ value: 9 }, 3)
 
+// the in operator narrowing
+type Fish = { swim: () => void }
+type Bird = { fly: () => void }
+
+function moveAnimal(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    return animal.swim()
+  }
+  return animal.fly()
+}
+const fish: Fish = {
+  swim: () => {
+    console.log("Fish is swimming")
+  },
+}
+moveAnimal(fish)
+
+// example 2
+// type Fish1 = { swim: () => void }
+// type Bird1 = { fly: () => void }
+// type Human1 = { swim?: () => void; fly?: () => void }
+
+// function moveAnimal1(animal1: Fish1 | Bird1 | Human1) {
+//   if ("swim" in animal1) {
+//     animal1
+//   } else {
+//     animal1
+//   }
+// }
+
 export {}

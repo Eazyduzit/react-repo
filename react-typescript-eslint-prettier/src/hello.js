@@ -247,3 +247,15 @@ function multiplyValue(container, factor) {
     }
 }
 multiplyValue({ value: 9 }, 3);
+function moveAnimal(animal) {
+    if ("swim" in animal) {
+        return animal.swim();
+    }
+    return animal.fly();
+}
+var fish = {
+    swim: function () {
+        console.log("Fish is swimming");
+    },
+};
+moveAnimal(fish);
