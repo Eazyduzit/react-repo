@@ -330,4 +330,13 @@ const longerArray = longest([1, 2], [1, 2, 3])
 const longerString = longest(["bob", "alice"], ["tom", "jane", "kent"])
 // const notOK = longest(10, 100)
 console.log(longerArray, longerString)
+
+// working with constrained values (common error)
+function minimumLength<Type extends { length: number }>(obj: Type, minimum: number): Type {
+  if (obj.length >= minimum) {
+    return obj
+  } else {
+    return { length: minimum }
+  }
+}
 export {}

@@ -325,3 +325,12 @@ var longerArray = longest([1, 2], [1, 2, 3]);
 var longerString = longest(["bob", "alice"], ["tom", "jane", "kent"]);
 // const notOK = longest(10, 100)
 console.log(longerArray, longerString);
+// working with constrained values (common error)
+function minimumLength(obj, minimum) {
+    if (obj.length >= minimum) {
+        return obj;
+    }
+    else {
+        return { length: minimum };
+    }
+}
