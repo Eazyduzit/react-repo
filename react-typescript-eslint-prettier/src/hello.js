@@ -287,3 +287,6 @@ function myFunc(someArg) {
 }
 myFunc.description = "default description";
 doSomething1(myFunc);
+function fn(ctor) {
+    return new ctor("Hei");
+}

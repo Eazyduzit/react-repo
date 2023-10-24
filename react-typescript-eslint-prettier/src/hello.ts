@@ -289,4 +289,16 @@ function myFunc(someArg: number) {
 myFunc.description = "default description"
 doSomething1(myFunc)
 
+// construct signatures
+type someConstructor = {
+  new (s: string): someObject
+}
+function fn(ctor: someConstructor) {
+  return new ctor("Hei")
+}
+
+interface CallConstruct {
+  new (s: string): Date
+  (n?: number): string
+}
 export {}
