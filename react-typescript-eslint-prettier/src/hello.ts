@@ -311,4 +311,11 @@ const n = firstElement([1, 2, 3])
 const u = firstElement([])
 console.log(s, n, u)
 
+// inference
+function map<Input, Output>(arr: Input[], func: (arg: Input) => Output): Output[] {
+  return arr.map(func)
+}
+const parsed = map(["1", "2", "3", "4", "Hey"], (n) => parseInt(n))
+console.log(parsed)
+
 export {}

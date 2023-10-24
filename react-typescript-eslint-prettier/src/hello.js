@@ -306,3 +306,9 @@ var s = firstElement(["a", "b", "c"]);
 var n = firstElement([1, 2, 3]);
 var u = firstElement([]);
 console.log(s, n, u);
+// inference
+function map(arr, func) {
+    return arr.map(func);
+}
+var parsed = map(["1", "2", "3", "4", "Hey"], function (n) { return parseInt(n); });
+console.log(parsed);
