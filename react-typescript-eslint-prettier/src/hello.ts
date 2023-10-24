@@ -265,4 +265,14 @@ moveAnimal(fish)
 //   }
 // }
 
+// MORE ON FUNCTIONS
+// function type expressions
+function greeter(fn: (a: string) => void) {
+  fn("Hello, Today")
+}
+function printToConsole(s: string) {
+  console.log(s)
+}
+greeter(printToConsole)
+
 export {}

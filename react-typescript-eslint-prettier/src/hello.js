@@ -259,3 +259,23 @@ var fish = {
     },
 };
 moveAnimal(fish);
+// example 2
+// type Fish1 = { swim: () => void }
+// type Bird1 = { fly: () => void }
+// type Human1 = { swim?: () => void; fly?: () => void }
+// function moveAnimal1(animal1: Fish1 | Bird1 | Human1) {
+//   if ("swim" in animal1) {
+//     animal1
+//   } else {
+//     animal1
+//   }
+// }
+// MORE ON FUNCTIONS
+// function type expressions
+function greeter(fn) {
+    fn("Hello, Today");
+}
+function printToConsole(s) {
+    console.log(s);
+}
+greeter(printToConsole);
