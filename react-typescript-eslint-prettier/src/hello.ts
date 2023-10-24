@@ -290,15 +290,25 @@ myFunc.description = "default description"
 doSomething1(myFunc)
 
 // construct signatures
-type someConstructor = {
-  new (s: string): someObject
-}
-function fn(ctor: someConstructor) {
-  return new ctor("Hei")
-}
+// type someConstructor = {
+//   new (s: string): someObject
+// }
+// function fn(ctor: someConstructor) {
+//   return new ctor("Hei")
+// }
 
-interface CallConstruct {
-  new (s: string): Date
-  (n?: number): string
+// interface CallConstruct {
+//   new (s: string): Date
+//   (n?: number): string
+// }
+
+// generic functions
+function firstElement<Type>(arr: Type[]): Type | undefined {
+  return arr[0]
 }
+const s = firstElement(["a", "b", "c"])
+const n = firstElement([1, 2, 3])
+const u = firstElement([])
+console.log(s, n, u)
+
 export {}

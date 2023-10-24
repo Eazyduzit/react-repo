@@ -192,8 +192,8 @@ padLeft(10, "Hello");
 function printAll(strs) {
     if (strs && typeof strs === "object") {
         for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
-            var s = strs_1[_i];
-            console.log(s);
+            var s_1 = strs_1[_i];
+            console.log(s_1);
         }
     }
     else if (typeof strs === "string") {
@@ -287,6 +287,22 @@ function myFunc(someArg) {
 }
 myFunc.description = "default description";
 doSomething1(myFunc);
-function fn(ctor) {
-    return new ctor("Hei");
+// construct signatures
+// type someConstructor = {
+//   new (s: string): someObject
+// }
+// function fn(ctor: someConstructor) {
+//   return new ctor("Hei")
+// }
+// interface CallConstruct {
+//   new (s: string): Date
+//   (n?: number): string
+// }
+// generic functions
+function firstElement(arr) {
+    return arr[0];
 }
+var s = firstElement(["a", "b", "c"]);
+var n = firstElement([1, 2, 3]);
+var u = firstElement([]);
+console.log(s, n, u);
