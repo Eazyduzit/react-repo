@@ -312,3 +312,16 @@ function map(arr, func) {
 }
 var parsed = map(["1", "2", "3", "4", "Hey"], function (n) { return parseInt(n); });
 console.log(parsed);
+// constraints
+function longest(a, b) {
+    if (a.length >= b.length) {
+        return a;
+    }
+    else {
+        return b;
+    }
+}
+var longerArray = longest([1, 2], [1, 2, 3]);
+var longerString = longest(["bob", "alice"], ["tom", "jane", "kent"]);
+// const notOK = longest(10, 100)
+console.log(longerArray, longerString);

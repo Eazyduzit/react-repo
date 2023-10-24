@@ -318,4 +318,16 @@ function map<Input, Output>(arr: Input[], func: (arg: Input) => Output): Output[
 const parsed = map(["1", "2", "3", "4", "Hey"], (n) => parseInt(n))
 console.log(parsed)
 
+// constraints
+function longest<Type extends { length: number }>(a: Type, b: Type) {
+  if (a.length >= b.length) {
+    return a
+  } else {
+    return b
+  }
+}
+const longerArray = longest([1, 2], [1, 2, 3])
+const longerString = longest(["bob", "alice"], ["tom", "jane", "kent"])
+// const notOK = longest(10, 100)
+console.log(longerArray, longerString)
 export {}
