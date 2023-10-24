@@ -326,11 +326,16 @@ var longerString = longest(["bob", "alice"], ["tom", "jane", "kent"]);
 // const notOK = longest(10, 100)
 console.log(longerArray, longerString);
 // working with constrained values (common error)
-function minimumLength(obj, minimum) {
-    if (obj.length >= minimum) {
-        return obj;
-    }
-    else {
-        return { length: minimum };
-    }
+// function minimumLength<Type extends { length: number }>(obj: Type, minimum: number): Type {
+//   if (obj.length >= minimum) {
+//     return obj
+//   } else {
+//     return { length: minimum }
+//   }
+// }
+// specifying type arguments (combining types)
+function combine(arr1, arr2) {
+    return arr1.concat(arr2);
 }
+var arr3 = combine([1, 2, 3], ["Hmm"]);
+console.log(arr3);

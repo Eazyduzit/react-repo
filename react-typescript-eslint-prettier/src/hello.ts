@@ -332,11 +332,18 @@ const longerString = longest(["bob", "alice"], ["tom", "jane", "kent"])
 console.log(longerArray, longerString)
 
 // working with constrained values (common error)
-function minimumLength<Type extends { length: number }>(obj: Type, minimum: number): Type {
-  if (obj.length >= minimum) {
-    return obj
-  } else {
-    return { length: minimum }
-  }
+// function minimumLength<Type extends { length: number }>(obj: Type, minimum: number): Type {
+//   if (obj.length >= minimum) {
+//     return obj
+//   } else {
+//     return { length: minimum }
+//   }
+// }
+
+// specifying type arguments (combining types)
+function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
+  return arr1.concat(arr2)
 }
+const arr3 = combine<string | number>([1, 2, 3], ["Hmm"])
+console.log(arr3)
 export {}
