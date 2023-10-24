@@ -275,4 +275,18 @@ function printToConsole(s: string) {
 }
 greeter(printToConsole)
 
+// call signatures
+type DescribableFunction = {
+  description: string
+  (someArg: number): boolean
+}
+function doSomething1(fn: DescribableFunction) {
+  console.log(fn.description + " returned " + fn(6))
+}
+function myFunc(someArg: number) {
+  return someArg > 3
+}
+myFunc.description = "default description"
+doSomething1(myFunc)
+
 export {}
